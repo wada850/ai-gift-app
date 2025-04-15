@@ -1,15 +1,52 @@
-<!-- public/index.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>ギフトレコメンド</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIギフトレコメンド</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <!-- CSSを外部ファイルとして読み込む -->
 </head>
 <body>
-  <h1>AIおすすめギフト</h1>
-  <div id="gifts"></div>
+  <header>
+    <h1>AI-Gifts</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Gift Ideas</a>
+      <a href="#">Recommendation</a>
+    </nav>
+  </header>
 
-  <script src="script.js"></script>
+  <section class="hero">
+    <h2>AI-Powered Gift & Recommendation</h2>
+    <p>大切な人にぴったりなギフトを、AIでスマートに見つけよう</p>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <img src="images/lovers.jpg" alt="For Lovers">
+      <h3>For Lovers</h3>
+      <p>恋人への特別なプレゼントを厳選</p>
+    </div>
+    <div class="card">
+      <img src="images/family.jpg" alt="For Family">
+      <h3>For Family</h3>
+      <p>家族に喜ばれる心温まるギフト</p>
+    </div>
+    <div class="card">
+      <img src="images/business.jpg" alt="For Business">
+      <h3>For Business</h3>
+      <p>ビジネスシーンでも使える上品な贈り物</p>
+    </div>
+    <div class="card">
+      <img src="images/trending.jpg" alt="Trending Gifts">
+      <h3>Trending Gifts</h3>
+      <p>今人気のギフトアイディアをチェック</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 AI-Gifts. All rights reserved.
+  </footer>
 </body>
 </html>

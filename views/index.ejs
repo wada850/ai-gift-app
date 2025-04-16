@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= siteTitle %></title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <!-- CSSを外部ファイルとして読み込む -->
+</head>
+<body>
+  <header>
+    <h1><%= siteTitle %></h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Gift Ideas</a>
+      <a href="#">Recommendation</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>AI-Powered Gift & Recommendation</h2>
+    <p>大切な人にぴったりなギフトを、AIでスマートに見つけよう</p>
+  </section>
+
+  <section class="cards">
+    <% cards.forEach(card => { %>
+      <div class="card">
+        <img src="<%= card.image %>" alt="<%= card.alt %>">
+        <h3><%= card.title %></h3>
+        <p><%= card.description %></p>
+      </div>
+    <% }) %>
+  </section>
+
+  <footer>
+    &copy; 2025 <%= siteTitle %>. All rights reserved.
+  </footer>
+</body>
+</html>

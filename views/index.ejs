@@ -22,18 +22,34 @@
     <p>大切な人にぴったりなギフトを、AIでスマートに見つけよう</p>
   </section>
 
-  <section class="cards">
-    <% cards.forEach(card => { %>
-      <div class="card">
-        <img src="<%= card.image %>" alt="<%= card.alt %>">
-        <h3><%= card.title %></h3>
-        <p><%= card.description %></p>
-      </div>
-    <% }) %>
+  <section class="cards" id="cards-container">
+    <!-- カードはここに JavaScript で挿入される -->
   </section>
 
   <footer>
     &copy; 2025 <%= siteTitle %>. All rights reserved.
   </footer>
+
+  <script>
+    // APIから取得したデータをJSで描画する
+    fetch('http://localhost:5000/api/gifts')
+      .then(response => response.json())
+      .then(cards => {
+        const container = document.getElementById('cards-container');
+        cards.forEach(card => {
+          const cardHTML = `
+            <div class="card">
+              <img src="${card.image}" alt="${card.name}">
+              <h3>${card.name}</h3>
+              <p>${card.desc}</p>
+            </div>
+          `;
+          container.insertAdjacentHTML('beforeend', cardHTML);
+        });
+      })
+      .catch(error => {
+        console.error('ギフト情報の取得に失敗しました:', error);
+      });
+  </script>
 </body>
 </html>
